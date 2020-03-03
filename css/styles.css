@@ -10,6 +10,10 @@ body {
     line-height: 1.6;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* ====================
         Typography
 ======================= */
@@ -22,31 +26,92 @@ h1, h2, strong {
     color: #FFE600;
 }
 
+.page-title,
+.subtitle {
+    color: #000;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+    justify-self: center;
+}
+
+.page-title::after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 100%;
+    background: #FFE600;
+    margin-top: -40px;
+    margin-left: 15px;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    margin: .5em 0 3em;
+}
+
 .hero-title {
     font-size: 1.5rem;
     line-height: 1.4;
     margin-bottom: 0;
 }
+
+.hero-subtitle {
+    font-size: 1.125rem;
+}
+
 .section-title {
     font-size: 1.125rem;
     color: #000;
-    margin-top: 1.125em;
 }
 
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #FFE600;
+    margin-top: 10px;
+}
+
+.section-title-center::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
 
 /* buttons */
 
 .btn {
     padding: .5em 1.75em;
     font-weight: 700;
+    margin-top: .5em;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-primary {
     background: #FFE600;
     color: #000;
     justify-self: start;
-    margin-top: .5em;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: #ffc400;
+}
+
+.btn-form {
+    justify-self: end;
     text-decoration: none;
+    color: #000;
 }
 
 /* ====================
@@ -124,6 +189,10 @@ h1, h2, strong {
 .nav-link:hover,
 .nav-link:focus {
     color: #FFE600;
+}
+
+.current {
+    border-bottom: 1px solid #FFE600;
 }
 
 .close-nav {
@@ -301,3 +370,87 @@ h1, h2, strong {
     }
 }
 
+/* =================
+        About me
+  ================== */
+
+.main-template {
+    padding: 4em 0;
+}
+
+.main-template > * {
+    grid-column: 2 / -2;
+}
+
+.main-image {
+    margin-bottom: 1.5em;
+    box-shadow: 5px 5px black, 10px 10px #FFE600;
+}
+
+@media (min-width: 600px) {
+    .main-image,
+    .secondary-text {
+        grid-column: 2;
+    }
+
+    .main-text {
+        grid-column: 3 / -2;
+        grid-row: span 2;
+    }
+
+    .secondary-text {
+        order: 2;
+    }
+}
+
+/* =================
+        form
+   ================= */
+
+
+.contact-form {
+    display: grid;
+}
+
+label {
+    font-weight: 700;
+}
+
+input,
+textarea {
+    margin-bottom: .75em;
+    padding: 0.4em;
+    font-family: inherit;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+@media (min-width: 600px) {
+    .contact-form {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: dense;
+        grid-gap: 0 1em;
+    }
+
+    .fname-label,
+    .fname-input {
+        grid-column: 1;
+    }
+
+    .lname-label,
+    .lname-input {
+        grid-column: 2;
+    }
+
+    .message-label,
+    .message-textarea {
+        grid-column: span 2;
+    }
+
+    .btn-form {
+        grid-column: 2;
+    }
+}
