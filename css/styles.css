@@ -319,7 +319,7 @@ h1, h2, strong {
 ======================= */
 
 .hero {
-    background-image: url(/images/hero-bg.jpg);
+    background-image: url(../images/hero-bg.jpg);
     background-size: cover;
     background-position: bottom;
     color: #fff;
