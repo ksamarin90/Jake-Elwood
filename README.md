@@ -1,4 +1,5 @@
 # Jake-Elwood
-Page of marketing agency
 
-permalink: /index.html
+Responsive Web Page for marketing agency.
+
+https://ksamarin90.github.io/Jake-Elwood/
